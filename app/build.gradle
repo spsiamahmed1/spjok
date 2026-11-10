@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.siam.tenhour'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.siam.tenhour'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // No external UI or runtime libraries: native Android Java/XML only.
+}

@@ -1,0 +1,15 @@
+<resources>
+    <color name="pink">#F472B6</color>
+    <color name="purple">#A855F7</color>
+    <color name="lavender">#E9D5FF</color>
+    <color name="ink">#1E1B2E</color>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">@color/purple</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

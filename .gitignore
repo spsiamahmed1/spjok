@@ -1,10 +1,15 @@
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
+# Android / Gradle
+.gradle/
+local.properties
+**/build/
+*.iml
+.idea/
+.DS_Store
+
+# Signing keys and local configuration
+*.jks
+*.keystore
 .env
-.coverage
-.pytest_cache/
-dist/
-build/
+
+# Java
+*.class
