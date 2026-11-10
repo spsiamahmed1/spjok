@@ -11,8 +11,8 @@ A tiny Python command-line starter project. It prints a greeting and includes a 
 From the repository root:
 
 ```bash
-python -m spjok
-python -m spjok Ada
+PYTHONPATH=src python -m spjok
+PYTHONPATH=src python -m spjok Ada
 ```
 
 For an editable installation with the `spjok` command:
