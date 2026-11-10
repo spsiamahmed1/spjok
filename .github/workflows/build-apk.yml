@@ -11,6 +11,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
     steps:
       - name: কোড নামানো
         uses: actions/checkout@v7
@@ -22,7 +25,12 @@ jobs:
           java-version: '17'
 
       - name: Android SDK license গ্রহণ
-        run: yes | sdkmanager --licenses
+        run: |
+          sdkmanager_path="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | sort -V | tail -n 1)"
+          test -x "$sdkmanager_path"
+          echo "$(dirname "$sdkmanager_path")" >> "$GITHUB_PATH"
+          set +o pipefail
+          yes | "$sdkmanager_path" --sdk_root="$ANDROID_HOME" --licenses
 
       - name: Android SDK Platform ইনস্টল
         run: sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
