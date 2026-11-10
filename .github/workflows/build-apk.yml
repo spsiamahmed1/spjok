@@ -21,11 +21,11 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Android SDK সেটআপ
-        uses: android-actions/setup-android@v3
+      - name: Android SDK license গ্রহণ
+        run: yes | sdkmanager --licenses
 
       - name: Android SDK Platform ইনস্টল
-        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+        run: sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
 
       - name: APK তৈরি
         run: ./gradlew --no-daemon assembleDebug
